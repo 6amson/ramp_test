@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+
+:root {
+  --color-empty-shade: #fff;
+  --color-light-shade: #eaeaea;
+  --color-lighter-shade: #edebe6;
+  --color-dark-shade: #6f6f66;
+  --color-darker-shade: #ecf3d3;
+  --color-text: #2d2d26;
+  --color-accent: #f4ff56;
+  --color-constructive: #109d46;
+  --color-destructive: #d94b03;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'ClashDisplay-Variable', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[class^="RampText--"] {
+  line-height: 1.5;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.RampText--s {
+  font-size: 0.75rem;
+}
+
+.RampText{
+  
+}
+
+.RampText--hushed {
+  color: var(--color-dark-shade);
+  display: flex;
+}
+
+.filter{
+  font-size: 1.3em;
+  position: relative;
+  top: 0.05rem;
+  margin-right: 0.3rem;
+}
+
+[class^="RampTextHeading--"] {
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.RampTextHeading--l {
+  font-size: 2.5rem;
+  opacity: 0;
+  position: relative;
+  top: 30px;
+  transition: opacity .5s ease-in, top .7s ease-out;
+}
+
+.RampTextMajor{
+  opacity: 0;
+  top: 30px;
+  position: relative;
+  transition: opacity .5s ease-in, top .7s ease-out;
+  transition-delay: .5s;
+}
+
+.RampGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.transaction-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  background-color: whitesmoke;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.RampBreak--xs {
+  height: 0.5rem;
+}
+
+.RampBreak--s {
+  height: 0.75rem;
+}
+
+.RampBreak--l {
+  height: 1.75rem;
+}
+
+hr.RampBreak--l {
+  height: 1px;
+  width: 100%;
+  margin: 1.75rem 0;
+  border: none;
+  background-color: var(--color-light-shade);
+}
+
+.RampInputSelect--root {
+  width: 100%;
+}
+
+.RampInputSelect--input {
+  padding: 1rem 0.75rem;
+  border: 1px solid var(--color-light-shade);
+  border-bottom: 1px solid var(--color-text);
+  cursor: pointer;
+  border-radius: 10px 10px 0 0;
+}
+
+.RampInputSelect--dropdown-container {
+  display: none;
+  position: fixed;
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid var(--color-darker-shade);
+  margin-top: 0.5rem;
+  max-height: 16rem;
+  overflow: auto;
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 1px, rgb(0 0 0 / 13%) 0px 4px 8px;
+}
+
+.RampInputSelect--dropdown-container-opened {
+  display: block;
+}
+
+.RampInputSelect--dropdown-item {
+  padding: 1rem 0.75rem;
+  background-color: var(--color-empty-shade);
+  border-bottom: 1px solid var(--color-light-shade);
+  cursor: pointer;
+}
+
+.RampInputSelect--dropdown-item-highlighted {
+  background-color: var(--color-lighter-shade);
+}
+
+.RampInputSelect--dropdown-item-selected {
+  font-weight: bold;
+}
+
+.RampInputCheckbox--container {
+  display: flex;
+}
+
+.RampInputCheckbox--label {
+  /* border: 1px solid var(--color-light-shade);
+  background-color: var(--color-lighter-shade);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem; */
+  appearance: none;
+  background-color: rgb(33, 145, 236);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  /*border: 0.15em solid currentColor;*/
+  border-radius: 0em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(33, 145, 236);
+  margin: 0;
+  position: absolute;
+  /* z-index: -10; */
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 0.5em 0.5em var(--form-control-color);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: rgb(0, 0, 0);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.RampInputCheckbox--label-disabled {
+  cursor: progress;
+}
+
+.RampInputCheckbox--label-checked:before {
+  display: none;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  border-color: var(--color-constructive);
+  background-color: var(--color-constructive);
+}
+
+.RampInputCheckbox--input {
+  display: none;
+}
+
+.RampMoney{
+  padding: 5px 0;
+}
+
+.RampButton {
+  border: 1px solid var(--color-light-shade);
+  background-color: rgb(33, 145, 236);
+  padding: 1.5rem;
+  cursor: pointer;font-size: 1em;
+  border-radius: 10px;
+  font-family: 'ClashDisplay-Variable';
+}
+
+.RampButton:hover {
+  background-color: var(--color-lighter-shade);
+}
+
+.RampButton:disabled {
+  cursor: none;
+}
+
+.RampPane {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-light-shade);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.RampPane:last-child{
+  border-bottom:  none;
+}
+
+.RampPane--content {
+  flex: 1;
+}
+
+.RampLoading--container {
+  display: flex;
+  justify-content: center;
+}
+
+.RampError {
+  margin: 4rem auto;
+  max-width: 40rem;
+  border: 1px solid var(--color-destructive);
+  color: var(--color-destructive);
+  padding: 2rem;
+}
+
+.MainContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.FilterContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+
+
+
+/*************************Spinner CSS*******************************/
+
+
+@keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25; /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-shrink {
+  0%, 25%, 100% {
+    /* minimum scale and opacity */
+    transform: scale(0.5);
+    opacity: 0.25;
+  }
+  26% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/***************Fonts**********************/
+
+@font-face {
+  font-family: 'ClashDisplay-Variable';
+  src: url('./fonts/ClashDisplay-Variable.woff2') format('woff2'),
+       url('./fonts/ClashDisplay-Variable.woff') format('woff'),
+       url('./fonts/ClashDisplay-Variable.ttf') format('truetype');
+       font-weight: 200 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashDisplay-Extralight';
+  src: url('./fonts/ClashDisplay-Extralight.woff2') format('woff2'),
+       url('./fonts/ClashDisplay-Extralight.woff') format('woff'),
+       url('./fonts/ClashDisplay-Extralight.ttf') format('truetype');
+       font-weight: 200;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashDisplay-Light';
+  src: url('./fonts/ClashDisplay-Light.woff2') format('woff2'),
+       url('./fonts/ClashDisplay-Light.woff') format('woff'),
+       url('./fonts/ClashDisplay-Light.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashDisplay-Regular';
+  src: url('./fonts/ClashDisplay-Regular.woff2') format('woff2'),
+       url('./fonts/ClashDisplay-Regular.woff') format('woff'),
+       url('./fonts/ClashDisplay-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashDisplay-Medium';
+  src: url('./fonts/ClashDisplay-Medium.woff2') format('woff2'),
+       url('./fonts/ClashDisplay-Medium.woff') format('woff'),
+       url('./fonts/ClashDisplay-Medium.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashDisplay-Semibold';
+  src: url('./fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+       url('./fonts/ClashDisplay-Semibold.woff') format('woff'),
+       url('./fonts/ClashDisplay-Semibold.ttf') format('truetype');
+       font-weight: 600;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('./fonts/ClashDisplay-Bold.woff2') format('woff2'),
+       url('./fonts/ClashDisplay-Bold.woff') format('woff'),
+       url('./fonts/ClashDisplay-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
